@@ -160,7 +160,8 @@ body {
 	height: 400px;
 	background-color: #ffffff;
 	border-radius: 3px;
-	box-shadow:0px 3px 3px #e3e4e6;
+	margin-top: 100px;
+	box-shadow:0px 3px 3px #000;
 	color: #637277;
 }
 .connected h2 {
@@ -313,6 +314,7 @@ body {
 	border-radius: 3px;
 	box-shadow:0px 3px 3px #e3e4e6;
 	color: #637277;
+	padding-top: 80px;
 }
 .invite-textfield h2 {
 	padding-top: 80px;
