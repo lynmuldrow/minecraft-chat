@@ -239,7 +239,8 @@ body {
 	height: 400px;
 	background-color: #ffffff;
 	border-radius: 3px;
-	box-shadow:0px 3px 3px #e3e4e6;
+	box-shadow:0px 3px 3px #000;
+	margin-top: 100px;
 	color: #637277;
 }
 .personinside h2 {
