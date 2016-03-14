@@ -62,20 +62,32 @@ body {
 
 .banner {
 	height: 70px;
-	background-color: #3c4446;
-	margin-bottom: 200px;
+	background-color: #fff;
+	margin-bottom: 40px;
 }
 
 .bannertext {
 	text-align:center;
 	padding-top: 15px;
 	font-family: 'Open Sans Condensed',serif;
-	font-weight: bold;
-	color:white;
-	font-size:25px;
+	font-weight: 300;
+	color: #2f6d99;
+	font-size:45px;
 }
+
+.bannertext2 {
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	font-family: 'Open Sans Condensed',serif;
+	font-weight: 300;
+	color: #fff;
+	font-size:15px;
+}
+
+
 .bannertext span {
-	color: #d6441b;
+	color: #444;
 }
 
 
@@ -164,7 +176,7 @@ body {
 	height: 400px;
 	background-color: #ffffff;
 	border-radius: 3px;
-	margin-top: 100px;
+	margin-top: 70px;
 	box-shadow:0px 3px 3px #000;
 	color: #637277;
 }
@@ -240,7 +252,7 @@ body {
 	background-color: #ffffff;
 	border-radius: 3px;
 	box-shadow:0px 3px 3px #000;
-	margin-top: 100px;
+	margin-top: 70px;
 	color: #637277;
 }
 .personinside h2 {
@@ -319,7 +331,7 @@ body {
 	border-radius: 3px;
 	box-shadow:0px 3px 3px #000;
 	color: #637277;
-	margin-top: 100px;
+	margin-top: 70px;
 	padding-top: 80px;
 }
 .invite-textfield h2 {
@@ -393,7 +405,7 @@ body {
 	background-color: #ffffff;
 	border-radius: 3px;
 	box-shadow:0px 3px 3px #000;
-	margin-top: 100px;
+	margin-top: 70px;
 	color: #637277;
 }
 .toomanypeople h2 {
@@ -423,7 +435,7 @@ body {
 	background-color: #ffffff;
 	border-radius: 3px;
 	box-shadow:0px 3px 3px #000;
-	margin-top: 100px;
+	margin-top: 70px;
 	color: #637277;
 	margin-bottom: 400px;
 }
@@ -576,7 +588,7 @@ footer {
 	left:0;
 	width:100%;
 	padding-top: 30px;
-	background-color: white;
+	background: url(../img/dancing.gif) no-repeat white;
 	height: 130px;
 }
 #chatform {
