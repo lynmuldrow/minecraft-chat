@@ -613,11 +613,11 @@ footer {
 }
 
 #message {
-	width: 450px;
+	width: 550px;
 	height: 80px;
 	display: block;
 	float:left;
-	margin: 0 0 0 100px;
+	margin: 0 auto;
 	background-color: #f9f9f9;
 	border: 1px solid #cccccc;
 	border-radius: 2px;
