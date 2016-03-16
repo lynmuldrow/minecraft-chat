@@ -119,11 +119,6 @@ body {
 	color: #fff
 }
 
-#nodelogo {
-	width: 410px;
-	height: 110px;
-	margin-bottom: 35px;
-}
 
 .hometext {
 	font-family: 'Open Sans Condensed';
@@ -678,4 +673,23 @@ footer {
 	width:700px;
 	margin: 0 auto 200px;
 	overflow:hidden;
+}
+
+
+/* Begin Responsive Changes */
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+/* Place your styles for phones and small tablets here */
+
+
+
+}
+/* Tablets (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 979px) {
+/* Place your styles for tablets and tiny laptops here */
+
+
+
 }
