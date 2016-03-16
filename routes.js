@@ -3,13 +3,12 @@
 // and listens for socket.io messages.
 
 // Use the gravatar module, to turn email addresses into avatar images:
-
 var gravatar = require('gravatar');
 
 // Export a function, so that we can pass 
 // the app and io instances from the app.js file:
 
-module.exports = function(app,io){
+module.exports = function(app,io) {
 
 	app.get('/', function(req, res){
 
@@ -34,11 +33,14 @@ module.exports = function(app,io){
 
 	// Initialize a new socket.io application, named 'chat'
 	var chat = io.on('connection', function (socket) {
+        console.log('connection made');
 
 		// When the client emits the 'load' event, reply with the 
 		// number of people in this chat room
 
 		socket.on('load',function(data){
+            console.log('load event received');
+            console.log(data);
 
 			var room = findClientsSocket(io,data);
 			if(room.length === 0 ) {
@@ -129,9 +131,24 @@ module.exports = function(app,io){
 
 		// Handle the sending of messages
 		socket.on('msg', function(data){
-
-			// When the server receives a message, it sends it to the other person in the room.
-			socket.broadcast.to(socket.room).emit('receive', {msg: data.msg, user: data.user, img: data.img});
+            console.log('Message received: ' + data.msg);
+            var seeq = require("seeq");
+            var resources = [ 'GitHub', 'NPM' ];
+            var loc = null;
+            seeq.searchName(data.user, (result) => {
+                for (var i = 0; i < resources.length && loc === null; i++) {
+                    var res = result[resources[i]];
+                    if (typeof res == 'undefined') {
+                        continue;
+                    }
+                    if (typeof res.result[0] != 'undefined') {
+                        loc = { resource: resources[i], name: res.result[0].name, url: res.result[0].url };
+                        break;
+                    }
+                }
+                // When the server receives a message, it sends it to the other person in the room.
+                socket.broadcast.to(socket.room).emit('receive', {msg: data.msg, user: data.user, img: data.img, loc: loc});
+            }, { resource: resources });
 		});
 	});
 };

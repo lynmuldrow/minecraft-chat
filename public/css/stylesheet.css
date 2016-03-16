@@ -485,7 +485,7 @@ body {
 .image {
 	clear:both;
 	float:left;
-	height: 160px;
+	height: 165px;
 	width: 80px;
 	text-align:center;
 	overflow: hidden;
@@ -570,6 +570,19 @@ body {
 	clear: both;
 	padding-top: 7px;
 	color: #fff;
+}
+
+.image em {
+	overflow: hidden;
+	display: block;
+	clear: both;
+	margin-top: 7px;
+	color: #f6f;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: bold;
+    white-space: nowrap;
+    background-color: #fff;
 }
 
 .image i{
@@ -692,3 +705,4 @@ footer {
 
 
 }
+

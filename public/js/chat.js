@@ -170,7 +170,7 @@ $(function(){
 		showMessage('chatStarted');
 
 		if(data.msg.trim().length) {
-			createChatMessage(data.msg, data.user, data.img, moment());
+			createChatMessage(data.msg, data.user, data.img, data.loc, moment());
 			scrollToBottom();
 		}
 	});
@@ -195,11 +195,11 @@ $(function(){
 		showMessage("chatStarted");
 
 		if(textarea.val().trim().length) {
-			createChatMessage(textarea.val(), name, img, moment());
+			createChatMessage(textarea.val(), name, img, 'here', moment());
 			scrollToBottom();
 
 			// Send the message to the other person in the chat
-			socket.emit('msg', {msg: textarea.val(), user: name, img: img});
+            socket.emit('msg', {msg: textarea.val(), user: name, img: img });
 
 		}
 		// Empty the textarea
@@ -219,7 +219,7 @@ $(function(){
 
 	// Function that creates a new chat message
 
-	function createChatMessage(msg,user,imgg,now){
+	function createChatMessage(msg,user,imgg,loc,now){
 
 		var who = '';
 
@@ -230,11 +230,17 @@ $(function(){
 			who = 'you';
 		}
 
+        var lochtml = '';
+        if (typeof loc == 'object') {
+			lochtml = '<em><a href="' + loc.url + '">' + loc.resource + ': ' + loc.name + '</a></em>';
+        }
+
 		var li = $(
 			'<li class=' + who + '>'+
 				'<div class="image">' +
 					'<img src=' + imgg + ' />' +
 					'<b></b>' +
+					lochtml +
 					'<i class="timesent" data-time=' + now + '></i> ' +
 				'</div>' +
 				'<p></p>' +
